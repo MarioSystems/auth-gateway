@@ -1,4 +1,4 @@
-# Auth Gateway & 🏛️ IAM Security System
+# Auth Gateway
 
 O **auth-gateway** é um sistema centralizado de segurança que atua como a única porta de entrada (*Edge Service*) para o ecossistema de APIs de uma organização. Ele isola toda a lógica de autenticação, autorização (RBAC), controle de tráfego (*Rate Limiting*) e gerenciamento de sessões em uma única camada robusta e de alta performance, protegendo os microsserviços internos (*downstream*).
 
