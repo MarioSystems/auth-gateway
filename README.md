@@ -7,7 +7,7 @@ O **auth-gateway** é um sistema centralizado de segurança que atua como a úni
 ## Documentação Completa
 
 Para entender a fundo a arquitetura do projeto, modelagem de dados e decisões técnicas, acesse a documentação oficial:
-* [ Documentação Online (Docs)](https://docs.google.com/document/d/1JOYe3oLPkZuJ3im37s_YTjEIr8UqW4vkVvHAOjc4xZk/edit?usp=sharing)
+* [ Documentação Online (Docs)](https://docs.google.com/document/d/1UFIm1TcWHH1bEc23Ctl5NnnnF7hC3PGC5RCMsukE-cI/edit?usp=sharing)
 * [ Baixar Documentação em PDF](https://github.com/user-attachments/files/28226543/auth-gateway.pdf)
 
 ---
