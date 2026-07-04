@@ -1,4 +1,4 @@
-# auth-gateway
+# Auth Gateway & 🏛️ IAM Security System
 
 O **auth-gateway** é um sistema centralizado de segurança que atua como a única porta de entrada (*Edge Service*) para o ecossistema de APIs de uma organização. Ele isola toda a lógica de autenticação, autorização (RBAC), controle de tráfego (*Rate Limiting*) e gerenciamento de sessões em uma única camada robusta e de alta performance, protegendo os microsserviços internos (*downstream*).
 
@@ -29,6 +29,14 @@ Para entender a fundo a arquitetura do projeto, modelagem de dados e decisões t
 * **RBAC Híbrido:** Controle de acesso baseado em Papéis (*Roles*) e Permissões granulares (*Permissions*) sem necessidade de alteração de código.
 * **Rate Limiting:** Proteção integrada contra ataques de força bruta e DDoS gerenciada via Redis.
 * **Proxy Reverso:** Encaminhamento transparente de requisições para microsserviços internos com enriquecimento de cabeçalhos (`X-User-Id`, `X-User-Role`).
+
+---
+
+## Metodologia de Desenvolvimento
+
+* **Metodologia:** TDD Estrito + BDD (*Behavior-Driven Development*)
+* **Objetivo:** Determinismo absoluto e tolerância zero a regressões de comportamento.
+* **Na Prática:** Testes de cenários de acesso baseados em comportamento (ex: *"Dado que um usuário possui a role 'Admin', quando ele tenta acessar a rota restrita X, então o acesso deve ser permitido"*) utilizando a sintaxe descritiva do BDD, além de 100% de cobertura de testes em componentes críticos como validadores de tokens, guards e auxiliares de criptografia.
 
 ---
 
