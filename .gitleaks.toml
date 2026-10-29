@@ -1,0 +1,6 @@
+title = "auth-gateway gitleaks configuration"
+
+[[allowlists]]
+description = "Legacy local development password already present in repository history"
+regexTarget = "match"
+regexes = ['''senha_segura_postgres_123''']

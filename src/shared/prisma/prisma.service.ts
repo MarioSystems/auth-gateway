@@ -11,9 +11,11 @@ export class PrismaService
   private readonly pool: Pool;
 
   constructor() {
-    const connectionString =
-      process.env.DATABASE_URL ??
-      'postgresql://postgres:senha_segura_postgres_123@localhost:5432/auth_gateway_db?schema=public';
+    const connectionString = process.env.DATABASE_URL;
+    if (!connectionString) {
+      throw new Error('DATABASE_URL must be configured.');
+    }
+
     const pool = new Pool({ connectionString });
     const adapter = new PrismaPg(pool);
     super({ adapter });
