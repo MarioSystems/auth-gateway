@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "users"
+  ALTER COLUMN "id" TYPE UUID USING "id"::uuid;

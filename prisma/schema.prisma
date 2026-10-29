@@ -5,25 +5,24 @@ datasource db {
 }
 
 generator client {
-  provider = "prisma-client"
+  provider = "prisma-client-js"
+  engineType = "library"
 }
 
 // Enum de status do usuário para o projeto
 enum UserStatus {
-  PENDING
   ACTIVE
-  BLOCKED
+  INACTIVE
 }
 
 // Entidade inicial de usuários
 model User {
-  id String @id @default(uuid())
+  id String @id @default(uuid()) @db.Uuid
   email String @unique
   passwordHash String @map("password_hash")
-  status UserStatus @default(PENDING)
+  status UserStatus @default(ACTIVE)
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
   @@map("users")
-  @@index([email])
 }
