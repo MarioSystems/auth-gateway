@@ -76,6 +76,8 @@ jobs:
         run: npm audit --omit=dev --audit-level=high
 
       - name: Scan repository for secrets
-        uses: gitleaks/gitleaks-action@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: >-
+          docker run --rm
+          -v "${{ github.workspace }}:/repo"
+          zricethezav/gitleaks:latest
+          detect --source=/repo --no-banner --redact
